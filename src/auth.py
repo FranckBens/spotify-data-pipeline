@@ -21,7 +21,7 @@ for track in results["items"]:
     tracks.append({
         "track_name": track["name"],
         "artist": track["artists"][0]["name"],
-        "popularity": track["popularity"]
+        "popularity": track.get("popularity", None)
     })
 
 df = pd.DataFrame(tracks)

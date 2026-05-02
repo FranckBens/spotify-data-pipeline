@@ -1,23 +1,28 @@
 # Spotify Data Pipeline 🎧
 
-Projet personnel de data engineering utilisant l'API Spotify.
+Projet personnel de data engineering basé sur l'API Spotify.
 
-## Étape actuelle
+## Objectif
 
-✅ Authentification OAuth Spotify  
-✅ Connexion utilisateur  
-✅ Extraction des top tracks
+Construire un pipeline récupérant les données Spotify utilisateur, les stockant puis les analysant.
 
 ## Stack
 
 - Python
 - Spotipy
 - Spotify API
-- dotenv
+- Pandas
+- Git
+
+## Fonctionnalités actuelles
+
+✅ OAuth Spotify  
+✅ Connexion utilisateur  
+✅ Extraction Top Tracks
 
 ## Prochaines étapes
 
 - Export CSV
 - PostgreSQL
-- Pipeline automatisé
 - Dashboard
+- Automatisation
