@@ -1,21 +1,21 @@
-track_name,artist,popularity
-WE AINT GOT THE SAME STORY,Dame D.O.L.L.A,
-Until,Kaleem Taylor,
-Oak,WOOLFSON,
-sweettooth,Gracy Hopkins,
-Cruising,Will Hill ,
-H LORENZO,Joey Fatts,
-Nights In The Sun (feat. Wizkid),Odeal,
-Rich Kids,Dom Kennedy,
-Show Me Sumn,Will Hill ,
-Wait on Us (Bastian Bell Remix),Tamae,
-Sunshine,prodThina,
-Big Binnis,Zingah,
-Cowhide Boots,King Hendrick$,
-Now Ya Gang,YoDogg,
-Pep Talk,Xavy Rusan,
-I Like It Like This,Chef Boy,
-All My Life,Cuzzy Capone,
-Weekend,J. Stone,
-FYE FYE,Tobe Nwigwe,
-Wake Up (HIM),Dear Silas,
+track_id,track_name,main_artist,artist_count,duration_ms,explicit,track_number,disc_number,album_name,album_type,release_date,album_total_tracks,is_playable,is_local,isrc,spotify_url
+7mDaaIoD5Ol9PfOMKQMEwF,WE AINT GOT THE SAME STORY,Dame D.O.L.L.A,2,185142,True,2,1,Y.A.G.I.,album,2025-10-03,9,True,False,QT65Y2559503,https://open.spotify.com/track/7mDaaIoD5Ol9PfOMKQMEwF
+0zlJInXqmXlimbF0wyhJ8u,Until,Kaleem Taylor,1,195740,False,2,1,She Knows,album,2020-10-16,7,True,False,UKXN22098956,https://open.spotify.com/track/0zlJInXqmXlimbF0wyhJ8u
+7KWwGxXvbtjr1Q34PqYI6Z,Oak,WOOLFSON,1,166000,False,4,1,Distant,single,2023-09-10,4,True,False,IL6652307084,https://open.spotify.com/track/7KWwGxXvbtjr1Q34PqYI6Z
+2b8k31gjPQBc3thTJsLkqq,sweettooth,Gracy Hopkins,1,152129,True,1,1,sweettooth,single,2025-09-12,1,True,False,FR9W12547520,https://open.spotify.com/track/2b8k31gjPQBc3thTJsLkqq
+4gfX27zjePZVrOZZ7znaMq,Cruising,Will Hill ,1,202758,True,4,1,For The Passenger Princess II,album,2026-02-13,9,True,False,QZK6P2636161,https://open.spotify.com/track/4gfX27zjePZVrOZZ7znaMq
+27dxYkzylTXTFQoZKz2cgk,H LORENZO,Joey Fatts,1,164500,True,2,1,BLOOD IN MY EYE,album,2025-02-21,7,True,False,QZPEW2588598,https://open.spotify.com/track/27dxYkzylTXTFQoZKz2cgk
+3XmHd0NqN5O4e7Vnv8fb8q,Nights In The Sun (feat. Wizkid),Odeal,2,170013,False,9,1,The Fall That Saved Us,album,2025-11-21,9,True,False,QMFMG2540975,https://open.spotify.com/track/3XmHd0NqN5O4e7Vnv8fb8q
+5kETVMhnmTaSqMBZcD9Lpi,Rich Kids,Dom Kennedy,1,149889,True,1,1,Class of 95,album,2024-10-11,19,True,False,TCAIT2484604,https://open.spotify.com/track/5kETVMhnmTaSqMBZcD9Lpi
+4XWJrc42d6wVYrpPqckcPZ,Show Me Sumn,Will Hill ,1,145920,True,2,1,For The Passenger Princess II,album,2026-02-13,9,True,False,QZK6P2636159,https://open.spotify.com/track/4XWJrc42d6wVYrpPqckcPZ
+3Bn49d1erm9PJj3cZMltPb,Wait on Us (Bastian Bell Remix),Tamae,2,204844,False,7,1,Reimagined,album,2025-02-12,11,True,False,TCAJH2530172,https://open.spotify.com/track/3Bn49d1erm9PJj3cZMltPb
+5fo1QzUERyNBxGINKX5mx5,Sunshine,prodThina,1,310171,False,1,1,Sunshine,single,2025-09-12,1,True,False,GXHND2545094,https://open.spotify.com/track/5fo1QzUERyNBxGINKX5mx5
+7xTme2jhzEkJrsrbVlvumH,Big Binnis,Zingah,2,146564,True,4,1,Himmy The Lawd,single,2025-02-28,5,True,False,ZAA012100091,https://open.spotify.com/track/7xTme2jhzEkJrsrbVlvumH
+7uXq8InkgUyfZ4nMrXPPx4,Cowhide Boots,King Hendrick$,3,184000,True,6,1,BALLER ACADEMY (Deluxe),album,2025-07-03,18,True,False,TCAJS2568738,https://open.spotify.com/track/7uXq8InkgUyfZ4nMrXPPx4
+0eiOXcc7krJJHXrLroBh4A,Now Ya Gang,YoDogg,2,152057,True,6,1,Raised By Wolves 2,album,2025-10-31,14,True,False,USSM12503983,https://open.spotify.com/track/0eiOXcc7krJJHXrLroBh4A
+1DKgAynlNSGCcPYTb0j8uB,Pep Talk,Xavy Rusan,1,146442,True,1,1,Pep Talk,single,2020-10-30,1,True,False,SE5Q52001317,https://open.spotify.com/track/1DKgAynlNSGCcPYTb0j8uB
+6iNziWVMS9T8YLIpyc9U04,I Like It Like This,Chef Boy,3,174986,True,1,1,I Like It Like This,single,2025-10-17,1,True,False,USLD91784421,https://open.spotify.com/track/6iNziWVMS9T8YLIpyc9U04
+3hrrdMEf7SALuozwa1a0bM,All My Life,Cuzzy Capone,3,226093,True,12,1,American Hoodster 3,album,2017-06-10,14,True,False,TCADC1720617,https://open.spotify.com/track/3hrrdMEf7SALuozwa1a0bM
+3hJVWwwTQWdu4BFSQDqRFd,Weekend,J. Stone,2,161789,True,7,1,The Definition of Sacrifice,album,2022-06-15,15,True,False,TCAGC2236888,https://open.spotify.com/track/3hJVWwwTQWdu4BFSQDqRFd
+4g2OxXjs5skPc9cSFwxLSd,FYE FYE,Tobe Nwigwe,2,232615,False,1,1,FYE FYE,single,2021-05-16,1,True,False,QZJG52130003,https://open.spotify.com/track/4g2OxXjs5skPc9cSFwxLSd
+4Ls01eySxPExUii5ZO7ZK2,Wake Up (HIM),Dear Silas,1,157058,True,10,1,Cadillac Leather in July Deluxe: NO TINT,album,2025-04-29,12,True,False,QZK6F2504984,https://open.spotify.com/track/4Ls01eySxPExUii5ZO7ZK2
