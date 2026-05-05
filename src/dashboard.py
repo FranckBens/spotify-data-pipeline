@@ -1,61 +1,52 @@
 import streamlit as st
 import pandas as pd
 import psycopg2
-import plotly.express as px
+import os
+from dotenv import load_dotenv
 
-# Page config
-st.set_page_config(page_title="Spotify Dashboard", layout="wide")
+load_dotenv()
 
-st.title("🎧 Spotify Data Dashboard")
-st.write("Analyse de mes Top Tracks Spotify")
+st.set_page_config(page_title="Spotify Analytics", layout="wide")
 
-# Connexion PostgreSQL
 conn = psycopg2.connect(
-    dbname="spotify_db",
-    user="postgres",
-    password="12345",
-    host="localhost",
-    port="5432"
+    dbname=os.getenv("DB_NAME"),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD"),
+    host=os.getenv("DB_HOST"),
+    port=os.getenv("DB_PORT")
 )
 
-# Charger données
-query = "SELECT track_name, artist, popularity FROM top_tracks;"
+query = "SELECT * FROM top_tracks;"
 df = pd.read_sql(query, conn)
 
-conn.close()
+st.title("🎧 Spotify Analytics Dashboard")
 
 # KPI
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4 = st.columns(4)
 
-col1.metric("🎵 Nombre de Tracks", len(df))
-col2.metric("📈 Popularité Moyenne", round(df["popularity"].mean(), 2))
-col3.metric("🎤 Nombre d'Artistes", df["artist"].nunique())
+col1.metric("Tracks", len(df))
+col2.metric("Artists", df["main_artist"].nunique())
+col3.metric("Explicit %", round(df["explicit"].mean() * 100, 1))
+col4.metric("Avg Duration", round(df["duration_ms"].mean()/60000, 2))
 
 st.divider()
 
-# Top artistes
-artist_count = df["artist"].value_counts().reset_index()
-artist_count.columns = ["artist", "nb_tracks"]
+# Charts
+st.subheader("🎤 Top Artists")
+st.bar_chart(df["main_artist"].value_counts())
 
-fig1 = px.bar(
-    artist_count.head(10),
-    x="artist",
-    y="nb_tracks",
-    title="Top 10 artistes les plus présents"
-)
+st.subheader("💿 Album Types")
+st.bar_chart(df["album_type"].value_counts())
 
-st.plotly_chart(fig1, use_container_width=True)
+# Dates
+df["release_date"] = pd.to_datetime(df["release_date"])
+df["year"] = df["release_date"].dt.year
 
-# Popularité morceaux
-fig2 = px.bar(
-    df.sort_values("popularity", ascending=False).head(10),
-    x="track_name",
-    y="popularity",
-    title="Top 10 tracks les plus populaires"
-)
+st.subheader("📅 Release Years")
+st.bar_chart(df["year"].value_counts().sort_index())
 
-st.plotly_chart(fig2, use_container_width=True)
-
-# Tableau données
-st.subheader("📄 Données brutes")
+# Data
+st.subheader("📋 Dataset")
 st.dataframe(df)
+
+conn.close()
