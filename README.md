@@ -1,28 +1,44 @@
-# Spotify Data Pipeline 🎧
+## 🎧 Streaming Data Pipeline (Spotify API)
 
-Projet personnel de data engineering basé sur l'API Spotify.
+# 🎯 Objective
+Build a complete ETL pipeline using real Spotify user data to simulate a real-world data engineering workflow.
 
-## Objectif
 
-Construire un pipeline récupérant les données Spotify utilisateur, les stockant puis les analysant.
+# 📌 Overview
+This project is an end-to-end ETL data pipeline that extracts user listening data from the Spotify API, transforms it, and loads it into a PostgreSQL database for analysis and visualization.
 
-## Stack
-
+# ⚙️ Tech Stack
 - Python
-- Spotipy
-- Spotify API
-- Pandas
+- PostgreSQL
+- SQL
+- Streamlit
 - Git
 
-## Fonctionnalités actuelles
+# 🚀 Features
+- OAuth authentication with Spotify API
+- Data extraction (Top Tracks)
+- Data transformation and CSV generation
+- Data loading into PostgreSQL
+- SQL analytics queries
+- Interactive dashboard with Streamlit
+- Pipeline execution via batch script
 
-✅ OAuth Spotify  
-✅ Connexion utilisateur  
-✅ Extraction Top Tracks
+# 📊 Example Insights
+- Percentage of explicit tracks
+- Average track duration
+- Albums vs Singles distribution
+- Top artists
+- Release year trends
 
-## Prochaines étapes
+# ▶️ Run the Project
 
-- Export CSV
-- PostgreSQL
-- Dashboard
-- Automatisation
+1. Clone the repository
+2. Create a `.env` file:
+
+# 🔐 Security
+Sensitive data is managed using environment variables and excluded from version control.
+
+# 📈 Future Improvements
+- Full pipeline automation
+- Cloud deployment
+- Data orchestration tools (Airflow)
