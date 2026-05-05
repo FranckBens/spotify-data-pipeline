@@ -1,44 +1,120 @@
-## 🎧 Streaming Data Pipeline (Spotify API)
-
-# 🎯 Objective
-Build a complete ETL pipeline using real Spotify user data to simulate a real-world data engineering workflow.
+# 🎧 Spotify Data Pipeline
 
 
-# 📌 Overview
-This project is an end-to-end ETL data pipeline that extracts user listening data from the Spotify API, transforms it, and loads it into a PostgreSQL database for analysis and visualization.
+## 🎯 Project Overcview
+This project is an end-to-end data pipeline that extracts personal listening data from the Spotify API, processes it, stores it in a PostgreSQL database, and visualizes insights through an interactive dashboard.
 
-# ⚙️ Tech Stack
-- Python
-- PostgreSQL
-- SQL
-- Streamlit
-- Git
+The goal is to simulate a real-world data engineering workflow on a small scale.
 
-# 🚀 Features
+---
+
+## ⚙️ Tech Stack
+- Python (data extraction & processing)
+- PostgreSQL (data storage)
+- SQL (data analysis)
+- Streamlit (data visualization)
+- Git & GitHub (version control)
+
+---
+
+## 🔄 Pipeline Architecture
+
+Spotify API (OAuth)
+        ↓
+Python (Extract)
+        ↓
+CSV (Raw data)
+        ↓
+PostgreSQL (Load)
+        ↓
+SQL (Transform & Analysis)
+        ↓
+Streamlit Dashboard
+
+---
+
+## 🚀 Features
 - OAuth authentication with Spotify API
-- Data extraction (Top Tracks)
-- Data transformation and CSV generation
-- Data loading into PostgreSQL
-- SQL analytics queries
-- Interactive dashboard with Streamlit
-- Pipeline execution via batch script
+- Extraction of user's Top Tracks
+- Data transformation and cleaning
+- Storage in PostgreSQL
+- Analytical SQL queries
+- Interactive Streamlit dashboard
+- Automated pipeline execution (Windows Task Scheduler)
+- Secure environment variables management (.env)
 
-# 📊 Example Insights
+---
+
+## 📊 Sample Insights
 - Percentage of explicit tracks
 - Average track duration
 - Albums vs Singles distribution
-- Top artists
-- Release year trends
+- Top artists ranking
+- Listening trends by release year
 
-# ▶️ Run the Project
+---
 
-1. Clone the repository
-2. Create a `.env` file:
+## 🛠️ How to Run
 
-# 🔐 Security
-Sensitive data is managed using environment variables and excluded from version control.
+### 1. Clone the repository
+</> Bash
 
-# 📈 Future Improvements
-- Full pipeline automation
-- Cloud deployment
-- Data orchestration tools (Airflow)
+git clone https://github.com/FranckBens/spotify-data-pipeline.git
+cd spotify-data-pipeline
+
+### 2. Setup environment
+</> Bash
+
+python -m venv venv
+source venv/bin/activate  # ou venv\Scripts\activate sur Windows
+pip install -r requirements.txt
+
+### 3. Configure environment variables
+Create a .env file:
+
+DB_NAME=spotify_db
+DB_USER=postgres
+DB_PASSWORD=your_password
+DB_HOST=localhost
+DB_PORT=5432
+
+### 4. Run pipeline
+</> Bash
+
+python src/auth.py
+python src/load_to_postgres.py
+
+### 5. Launch dashboard
+</> Bash
+
+python -m streamlit run src/dashboard.py
+
+📂 **Project Structure**
+
+spotify-data-pipeline/
+│
+├── src/
+│   ├── auth.py
+│   ├── load_to_postgres.py
+│   └── dashboard.py
+│
+├── data/
+├── .env (not committed)
+├── README.md
+└── requirements.txt
+
+---
+
+🎯 **Key Learnings**
+- Building an end-to-end ETL pipeline
+- Working with REST APIs and OAuth
+- Designing relational data models
+- Writing analytical SQL queries
+- Automating workflows
+- Managing secrets securely
+
+📌 **Future Improvements**
+- Add Airflow for orchestration
+- Deploy dashboard online
+- Add historical tracking over time
+- Integrate more Spotify endpoints (audio features)
