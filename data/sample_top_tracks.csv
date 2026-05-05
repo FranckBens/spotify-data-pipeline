@@ -1,0 +1,6 @@
+track_name,main_artist,album_type,release_date,duration_ms,explicit,artist_count
+Sample Song 1,Artist A,album,2022-01-01,180000,False,1
+Sample Song 2,Artist B,single,2023-05-10,200000,True,2
+Sample Song 3,Artist C,album,2021-07-15,210000,False,1
+Sample Song 4,Artist D,single,2020-03-20,175000,True,3
+Sample Song 5,Artist E,album,2024-11-01,190000,False,1
