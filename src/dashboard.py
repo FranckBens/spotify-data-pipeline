@@ -8,16 +8,30 @@ load_dotenv()
 
 st.set_page_config(page_title="Spotify Analytics", layout="wide")
 
-conn = psycopg2.connect(
-    dbname=os.getenv("DB_NAME"),
-    user=os.getenv("DB_USER"),
-    password=os.getenv("DB_PASSWORD"),
-    host=os.getenv("DB_HOST"),
-    port=os.getenv("DB_PORT")
-)
+# SWITCH
+USE_DATABASE = False
 
-query = "SELECT * FROM top_tracks;"
-df = pd.read_sql(query, conn)
+try:
+    if USE_DATABASE:
+        conn = psycopg2.connect(
+            dbname=os.getenv("DB_NAME"),
+            user=os.getenv("DB_USER"),
+            password=os.getenv("DB_PASSWORD"),
+            host=os.getenv("DB_HOST"),
+            port=os.getenv("DB_PORT")
+        )
+
+        query = "SELECT * FROM top_tracks;"
+        df = pd.read_sql(query, conn)
+
+        conn.close()
+
+    else:
+        raise Exception("Force CSV mode")
+
+except:
+    st.warning("Using sample dataset (no database connection)")
+    df = pd.read_csv("data/sample_top_tracks.csv")
 
 st.title("🎧 Spotify Analytics Dashboard")
 
@@ -48,5 +62,3 @@ st.bar_chart(df["year"].value_counts().sort_index())
 # Data
 st.subheader("📋 Dataset")
 st.dataframe(df)
-
-conn.close()

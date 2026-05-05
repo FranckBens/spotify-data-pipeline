@@ -1,12 +1,14 @@
 # Environnement virtuel
 venv/
-.env/
 
 # Secrets
 .env
 *.env
 
-# Cache Python
+# Personal Data
+data/top_tracks.csv
+
+# Python cache
 __pycache__/
 *.pyc
 
