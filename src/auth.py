@@ -42,5 +42,5 @@ df = pd.DataFrame(tracks)
 
 df.to_csv("data/top_tracks.csv", index=False)
 
-print("CSV créé !")
+print("CSV created !")
 print(df.head())

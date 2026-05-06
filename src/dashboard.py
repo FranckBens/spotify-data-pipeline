@@ -45,20 +45,20 @@ col4.metric("Avg Duration", round(df["duration_ms"].mean()/60000, 2))
 
 st.divider()
 
-# Charts
+# CHARTS
 st.subheader("🎤 Top Artists")
 st.bar_chart(df["main_artist"].value_counts())
 
 st.subheader("💿 Album Types")
 st.bar_chart(df["album_type"].value_counts())
 
-# Dates
+# DATES
 df["release_date"] = pd.to_datetime(df["release_date"])
 df["year"] = df["release_date"].dt.year
 
 st.subheader("📅 Release Years")
 st.bar_chart(df["year"].value_counts().sort_index())
 
-# Data
+# DATA
 st.subheader("📋 Dataset")
 st.dataframe(df)
