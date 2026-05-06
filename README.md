@@ -192,11 +192,11 @@ DB_PASSWORD=your_password_from_postgres_db
 python src/auth.py   
 python src/load_to_postgres.py  
   
-Windows:
-python -m streamlit run src/dashboard.py
+ Windows:  
+python -m streamlit run src/dashboard.py  
 
-Mac/Linux:
-python3 -m streamlit run src/dashboard.py
+ Mac/Linux:  
+python3 -m streamlit run src/dashboard.py  
 
 ---
 
