@@ -23,19 +23,43 @@ logging.info("Connection successful !!")
 
 cur = conn.cursor()
 
-# INSERT 
+# CREATE TABLE (UNE SEULE FOIS)
+cur.execute("""
+CREATE TABLE IF NOT EXISTS top_tracks (
+    track_id TEXT PRIMARY KEY,
+    track_name TEXT,
+    main_artist TEXT,
+    artist_count INT,
+    duration_ms INT,
+    explicit BOOLEAN,
+    track_number INT,
+    disc_number INT,
+    album_name TEXT,
+    album_type TEXT,
+    release_date DATE,
+    album_total_tracks INT,
+    is_playable BOOLEAN,
+    is_local BOOLEAN,
+    isrc TEXT,
+    spotify_url TEXT
+);
+""")
+conn.commit()
+logging.info("Table ready")
+
+# INSERT
 for _, row in df.iterrows():
     try:
         cur.execute("""
-            INSERT INTO top_tracks (
-                track_id, track_name, main_artist, artist_count,
-                duration_ms, explicit, track_number, disc_number,
-                album_name, album_type, release_date, album_total_tracks,
-                is_playable, is_local, isrc, spotify_url
-            )
-            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
-            track_id TEXT PRIMARY KEY
-        """, tuple(row))
+    INSERT INTO top_tracks (
+        track_id, track_name, main_artist, artist_count,
+        duration_ms, explicit, track_number, disc_number,
+        album_name, album_type, release_date, album_total_tracks,
+        is_playable, is_local, isrc, spotify_url
+    )
+    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+    ON CONFLICT (track_id) DO NOTHING
+""", tuple(row))
     except Exception as e:
         logging.error(f"insertion error : {e}")
 
